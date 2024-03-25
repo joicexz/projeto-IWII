@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="var-carrossel.css">
     <title>Document</title>
 </head>
 
@@ -140,12 +141,35 @@
         <div>
             <span class="topico-2"><i>• Tipos de Variáveis: </i></span>
             <p class="text-2">
-
                 Em JavaScript, uma variável é um contêiner para armazenar dados. Ela pode armazenar diferentes tipos de
                 valores, como números, strings, booleanos, objetos e muito mais. As variáveis em JavaScript são
                 declaradas
                 usando a palavra-chave var, let ou const, seguida pelo nome da variável. Veja a diferença entre elas:
             </p>
+        </div>
+
+        <div class="carrossel">
+            <div class="container-carrossel">
+                <input type="radio" name="slider" id="item-1" checked>
+                <input type="radio" name="slider" id="item-2">
+                <input type="radio" name="slider" id="item-3">
+            </div>
+
+            <div class="cards">
+                <label for="item-1" class="card" id="var-1">
+                    <p>CONST</p>
+                </label>
+
+                <label class="card" for="item-2" id="var-2">
+                    <p>VAR</p>
+                </label>
+
+                <label class="card" for="item-3" id="var-3">
+                    <p>LET</p>
+                </label>
+            </div>
+        </div>
+
         </div>
 
     </section>

@@ -19,6 +19,10 @@ body {
     width: 100vw;
 }
 
+input {
+    display: none;
+}
+
 /* PRIMEIRA PAG */
 
 .pag1 {
@@ -146,6 +150,7 @@ main {
     text-align: justify;
     margin: 45px;
 }
+
 
 .tittle-2 {
     color: white;
@@ -297,15 +302,17 @@ main hr {
 
 /* VARIÁVEIS */
 .var {
-    background-color: #F5D248;
+    background-color: #ffe168e1;
     width: 100%;
     grid-template-areas: "top1" "carrosel" "tipos";
     grid-template-rows: 200px 400px 1fr;
     display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 45px;
 }
 
-.top1{
+.top1 {
     grid-area: top1;
     width: 100%;
     height: 100%;
@@ -316,20 +323,21 @@ main hr {
     /* background-color: #CC800E; */
 }
 
-.icon-top{
+.icon-top {
     grid-area: icon-top;
     /* background-color: aqua; */
     align-items: center;
     justify-content: center;
-    
+
 }
 
-.icon-top img{
-    width:100px;
+.icon-top img {
+    height: 80px;
+    width: 100px;
     /*INCLINAR A IMG*/
-} 
+}
 
-.tittle-name2{
+.tittle-name2 {
     grid-area: tittle-name2;
     display: flex;
     align-items: center;
@@ -339,7 +347,7 @@ main hr {
     text-shadow: 1px 2px 3px #000000;
 }
 
-.topico-2{
+.topico-2 {
     color: rgb(0, 0, 0);
     font-size: 30px;
     display: flex;
@@ -356,3 +364,75 @@ main hr {
     text-align: justify;
     margin: 45px;
 }
+
+.carrosel{
+    grid-area: carrossel;
+    width: 100%;
+    height: 100%;
+}
+
+/*
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 10px;
+  font-family: 'DM Sans', sans-serif;
+    background-color: #428aa6;
+}
+
+input{
+  display: none;
+}
+
+.card {
+  position: absolute;
+  width: 60%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transition: transform .4s ease;
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  max-height: 600px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.cards {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+#item-1:checked ~ .cards #song-3, #item-2:checked ~ .cards #song-1, #item-3:checked ~ .cards #song-2 {
+  transform: translatex(-40%) scale(.8);
+  opacity: .4;
+  z-index: 0;
+}
+
+#item-1:checked ~ .cards #song-2, #item-2:checked ~ .cards #song-3, #item-3:checked ~ .cards #song-1 {
+  transform: translatex(40%) scale(.8);
+  opacity: .4;
+  z-index: 0;
+}
+
+#item-1:checked ~ .cards #song-1, #item-2:checked ~ .cards #song-2, #item-3:checked ~ .cards #song-3 {
+  transform: translatex(0) scale(1);
+  opacity: 1;
+  z-index: 1;
+
+}
+*/
