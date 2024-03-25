@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Jomhuria&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Jomhuria&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Jomhuria&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jomhuria&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Jomhuria&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
 
@@ -14,10 +14,10 @@ li {
 }
 
 body {
+    overflow-x: hidden;
     height: 100vh;
     width: 100vw;
 }
-
 
 /* PRIMEIRA PAG */
 
@@ -27,7 +27,6 @@ body {
     width: 100vw;
     height: 100vh;
 }
-
 
 nav {
     background-color: rgb(245, 210, 72);
@@ -291,13 +290,69 @@ main hr {
 
 .exemplo-java img {
     width: 40%;
-    height: 140px;
+    height: 160px;
     display: flex;
     border-radius: 5px;
 }
 
-
 /* VARIÁVEIS */
 .var {
     background-color: #F5D248;
+    width: 100%;
+    grid-template-areas: "top1" "carrosel" "tipos";
+    grid-template-rows: 200px 400px 1fr;
+    display: grid;
+    gap: 45px;
+}
+
+.top1{
+    grid-area: top1;
+    width: 100%;
+    height: 100%;
+    grid-template-areas: "icon-top tittle-name2";
+    grid-template-columns: 100px 1fr;
+    display: grid;
+    margin: 45px;
+    /* background-color: #CC800E; */
+}
+
+.icon-top{
+    grid-area: icon-top;
+    /* background-color: aqua; */
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.icon-top img{
+    width:100px;
+    /*INCLINAR A IMG*/
+} 
+
+.tittle-name2{
+    grid-area: tittle-name2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Jomhuria;
+    font-size: 180px;
+    text-shadow: 1px 2px 3px #000000;
+}
+
+.topico-2{
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    display: flex;
+    margin: 35px;
+    font-family: Josefin Sans;
+    /* margin-top: 45px; */
+}
+
+.text-2 {
+    color: rgb(0, 0, 0);
+    font-family: Josefin Sans;
+    font-size: 25px;
+    display: flex;
+    text-align: justify;
+    margin: 45px;
 }
