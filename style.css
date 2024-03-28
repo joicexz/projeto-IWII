@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Jomhuria&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Karma:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
     margin: 0;
@@ -15,6 +16,7 @@ body {
     overflow-x: hidden;
     height: 100vh;
     width: 100vw;
+    background-color: #F5F5F5;
 }
 
 input {
@@ -71,11 +73,34 @@ nav {
     color: black;
 }
 
+
+.back {
+    position: fixed;
+    width: 70px;
+    height: 70px;
+    right: 32px;
+    bottom: 32px;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    opacity: .3;
+    transition: opacity .5s;
+    border: 3px solid #eabc05;
+    background-color: #F5D248;
+    color: #000;
+    font-size: 2rem;
+    z-index: 100;
+}
+
+.back:hover {
+    opacity: 1;
+    color: #000;
+}
+
 /* INTRODUÇÃO */
 .intro {
     width: 100vw;
     height: 100vh;
-    background-color: #F5F5F5;
     grid-template-areas: "intro-pag1" "intro-pag2";
     grid-template-rows: 1fr 1fr;
     display: grid;
@@ -90,7 +115,6 @@ nav {
     grid-template-rows: 200px 1fr;
     display: grid;
 }
-
 
 .tittle-intro {
     grid-area: tittle-intro;
@@ -163,7 +187,6 @@ nav {
     grid-template-areas: "intro-container" "intro-container2";
     grid-template-rows: 200px 1fr 1fr;
     display: grid;
-    background-color: #F5F5F5;
 }
 
 .intro-container {
@@ -215,7 +238,6 @@ nav {
     gap: 20px;
     font-family: Karma;
     font-size: 25px;
-    background-color: #F5F5F5;
 }
 
 .conteudo-intro2 p {
@@ -286,7 +308,6 @@ nav {
     grid-template-areas: "img-java ex-java";
     grid-template-columns: 200px 1fr;
     display: grid;
-
 }
 
 .img-java {
@@ -327,3 +348,522 @@ nav {
 }
 
 /* VARIÁVEIS */
+.var {
+    width: 100vw;
+    height: 100vh;
+    grid-template-areas: "var-inicio" "tipos-dados";
+    grid-template-rows: 1fr 1fr;
+    display: grid;
+    gap: 10%;
+    display: flex;
+}
+
+.var-inicio {
+    grid-area: var-inicio;
+    width: 100%;
+    height: 100%;
+    grid-template-areas: "var-tittle" "carrossel";
+    grid-template-rows: 1fr 1fr;
+    display: grid;
+    display: flex;
+}
+
+.var-tittle {
+    grid-area: var-tittle;
+    width: 100%;
+    height: 100%;
+    grid-template-areas: "tittle" "conteudo-var";
+    grid-template-rows: 1fr 1fr;
+    display: grid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 110%;
+    left: 40%;
+}
+
+.tittle-var {
+    grid-area: tittle;
+    font-family: Jomhuria;
+    font-size: 120px;
+    color: #FECD0E;
+    text-shadow: 1px 2px 3px #000;
+}
+
+.tittle-var hr {
+    display: flex;
+    width: 305px;
+    height: 3px;
+    background-color: #000;
+    margin-left: 65px;
+}
+
+.conteudo-var {
+    grid-area: conteudo-var;
+    display: flex;
+    height: 100%;
+    width: 100vw;
+}
+
+.conteudo-var p {
+    font-family: Karma;
+    display: flex;
+    font-size: 25px;
+    position: relative;
+    top: 75%;
+    right: 80%;
+}
+
+.carrossel {
+    grid-area: carrossel;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    font-family: Jomhuria;
+    font-size: 45px;
+    transition: background .4s ease-in;
+    position: relative;
+    top: 210%;
+    right: 80%;
+}
+
+input[type=radio] {
+    display: none;
+}
+
+.card-carrossel {
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transition: .4s ease;
+    cursor: pointer;
+    background-color: #FECD0E;
+    border-radius: 10px;
+}
+
+.container-carrossel {
+    height: 90%;
+    max-width: 800px;
+    min-width: 600px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px;
+}
+
+.cards {
+    position: relative;
+    margin-bottom: 20px;
+    width: 800px;
+    height: 80%;
+}
+
+.texto-carrossel {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+}
+
+.text-card {
+    display: flex;
+    margin: 25px;
+}
+
+#var,
+#const,
+#let {
+    height: 105%;
+}
+
+
+#item-1:checked~.cards #let,
+#item-2:checked~.cards #const,
+#item-3:checked~.cards #var {
+    transform: translateX(-40%) scale(.8);
+    opacity: .4;
+    z-index: 0;
+}
+
+#item-1:checked~.cards #var,
+#item-2:checked~.cards #let,
+#item-3:checked~.cards #const {
+    transform: translateX(40%) scale(.8);
+    opacity: .4;
+    z-index: 0;
+}
+
+#item-1:checked~.cards #var,
+#item-2:checked~.cards #let,
+#item-3:checked~.cards #const {
+    transform: translateX(40%) scale(.8);
+    opacity: .4;
+    z-index: 0;
+}
+
+#item-1:checked~.cards #const,
+#item-2:checked~.cards #var,
+#item-3:checked~.cards #let {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    z-index: 1;
+}
+
+.tipos-dados {
+    grid-area: tipos-dados;
+    height: 100px;
+    grid-template-areas: "tipos-tittle" "conteudo-tipos";
+    grid-template-rows: 1fr 1fr;
+    display: grid;
+    display: flex;
+    position: relative;
+    top: 320%;
+    right: 90%;
+    flex-direction: column;
+}
+
+.tipos-tittle {
+    grid-area: tipos-tittle;
+    width: 800px;
+    height: 180px;
+    display: flex;
+    font-size: 65px;
+    font-family: Karma;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 10px;
+    font-weight: 500;
+    border: #000 3px solid;
+    margin-bottom: 45px;
+}
+
+.conteudo-tipos {
+    grid-area: conteudo-tipos;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    gap: 45px;
+    flex-wrap: wrap;
+}
+
+.container-var-tipos {
+    border: #000 5px solid;
+    border-radius: 15px;
+    grid-template-areas: "card-tipo texto-tipos";
+    grid-template-columns: 180px 1fr;
+    display: grid;
+    display: flex;
+    width: 900px;
+    position: relative;
+    right: 205px;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-tipo {
+    grid-area: card-tipo;
+    border-radius: 50%;
+    width: 180px;
+    height: 120px;
+    background-color: #F5D248;
+    font-weight: bold;
+    font-size: 25px;
+    font-family: Josefin Sans;
+    display: flex;
+    align-items: center;
+    margin: 25px;
+    justify-content: center;
+}
+
+.texto-tipos {
+    grid-area: texto-tipos;
+    font-family: Karma;
+    font-size: 20px;
+}
+
+.card-tipo-num {
+    grid-area: card-tipo;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    background-color: #F5D248;
+    font-weight: bold;
+    font-size: 25px;
+    font-family: Josefin Sans;
+    display: flex;
+    align-items: center;
+    margin: 25px;
+    justify-content: center;
+    position: relative;
+    right: 155px;
+}
+
+.card-tipo-array {
+    grid-area: card-tipo;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    background-color: #F5D248;
+    font-weight: bold;
+    font-size: 25px;
+    font-family: Josefin Sans;
+    display: flex;
+    align-items: center;
+    margin: 25px;
+    justify-content: center;
+    position: relative;
+    right: 20px;
+}
+
+.card-tipo-boolean {
+    grid-area: card-tipo;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    background-color: #F5D248;
+    font-weight: bold;
+    font-size: 25px;
+    font-family: Josefin Sans;
+    display: flex;
+    align-items: center;
+    margin: 25px;
+    justify-content: center;
+    position: relative;
+    right: 90px;
+}
+
+.card-tipo-function {
+    grid-area: card-tipo;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    background-color: #F5D248;
+    font-weight: bold;
+    font-size: 25px;
+    font-family: Josefin Sans;
+    display: flex;
+    align-items: center;
+    margin: 25px;
+    justify-content: center;
+    position: relative;
+    left: 5px;
+}
+
+/* OPERADORES */
+.operadores {
+    width: 100vw;
+    height: 100vh;
+    grid-template-areas: "tittle-op" "conteudo-op";
+    grid-template-rows: 200px 1fr;
+    display: grid;
+    position: relative;
+    top: 415%;
+}
+
+.tittle-op {
+    grid-area: tittle-op;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.tittle-op span {
+    font-family: Kanit;
+    font-size: 70px;
+    font-weight: bold;
+}
+
+.tittle-op hr {
+    width: 380px;
+    height: 4px;
+    background-color: #EFC41A;
+    border: none;
+    display: flex;
+    margin-left: 20%;
+}
+
+.conteudo-op {
+    grid-area: conteudo-op;
+    width: 100%;
+    height: 100%;
+    grid-template-areas: "op-comparacao op-aritmeticos";
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+}
+
+.op-comparacao {
+    grid-area: op-comparacao;
+    width: 100%;
+    height: 100%;
+    grid-template-areas: "tittle-comp" "container-comp";
+    grid-template-rows: 100px 1fr;
+    display: grid;
+}
+
+.tittle-comp {
+    grid-area: tittle-comp;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tittle-comp span {
+    font-family: Inria Sans;
+    font-size: 45px;
+    color: #FF9900;
+    text-shadow: 1px 1px 1px #000;
+}
+
+.container-comp {
+    grid-area: container-comp;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: 25px
+}
+
+.op-aritmeticos {
+    grid-area: op-aritmeticos;
+    width: 100%;
+    height: 100%;
+    grid-template-areas: "tittle-arit" "container-arit";
+    grid-template-rows: 100px 1fr;
+    display: grid;
+}
+
+.tittle-arit {
+    grid-area: tittle-arit;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tittle-arit span {
+    font-family: Inria Sans;
+    font-size: 45px;
+    color: #FF9900;
+    text-shadow: 1px 1px 1px #000;
+}
+
+.container-arit {
+    grid-area: container-arit;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+th {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+/* ESTRUTURAS */
+.estruturas {
+    width: 100vw;
+    height: 100vh;
+    background-color: #FECD0E;
+    grid-template-areas: "tittle-est" "conteudo-est";
+    grid-template-rows: 100px 1fr;
+    display: grid;
+    position: relative;
+    top: 415%;
+}
+
+.tittle-est {
+    grid-area: tittle-est;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tittle-est span {
+    color: white;
+    font-family: Jomhuria;
+    font-size: 100px;
+    text-shadow: 1px 3px 2px rgb(74, 71, 71);
+}
+
+.conteudo-est {
+    grid-area: conteudo-est;
+    font-family: Karma;
+    display: flex;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    z-index: 1;
+    background-color: #FECD0E;
+}
+
+.conteudo-est .card {
+    position: relative;
+    width: 350px;
+    height: 380px;
+    margin: 30px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background-color: #e8cd00;
+    display: flex;
+    padding-left: 45px;
+    align-items: center;
+    border-top: 3px solid #eddd81;
+    border-left: 3px solid #eddd81;
+}
+
+.conteudo-est .card .content {
+    text-align: center;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 0.5s;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: 45px;
+}
+
+.conteudo-est .card:hover .content {
+    transform: translateY(0px);
+    opacity: 1;
+    display: flex;
+}
+
+.conteudo-est .card .content h2 {
+    width: 100%;
+    font-size: 40px;
+    color: rgb(183, 164, 61);
+}
+
+.conteudo-est .card .content p {
+    width: 100%;
+    font-size: 1rem;
+    color: white;
+    font-family: Karma;
+    font-weight: bold;
+}
+
+/* EXERCÍCIOS DE FIXAÇÃO */

@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="var-carrossel.css">
+    <script src=" https://kit.fontawesome.com/324b71f187.js" crossorigin="anonymous">
+    </script>
     <link rel="icon" href="img/logo-js.png">
     <title>Tutorial JavaScript</title>
 </head>
@@ -20,15 +22,16 @@
             <ul class="menu">
                 <li><a href="#intro">Introdução</a></li>
                 <li><a href="#var">Variáveis</a></li>
-                <li><a href="#">Operadores</a></li>
-                <li><a hrdef="#">Estruturas</a></li>
-                <li><a href="#">Entrada e Saída</a></li>
-                <li><a href="#">Exemplo Prático</a></li>
+                <li><a href="#operadores">Operadores</a></li>
+                <li><a href="#estruturas">Estruturas</a></li>
+                <li><a href="#exercicios">Exercícios de Fixação</a></li>
             </ul>
         </nav>
     </section>
 
-
+    <a href="#" class="back" title="Voltar para o início">
+        <i class="fas fa-arrow-up"></i>
+    </a>
     <!-- INTRODUÇÃO -->
     <section class="intro" id="intro">
 
@@ -109,10 +112,317 @@
 
     <!-- VARIÁVEIS -->
     <section class="var" id="var">
+        <div class="var-inicio">
+            <div class="var-tittle">
+                <div class="tittle-var">
+                    <span>Variáveis</span>
+                    <hr>
+                </div>
+                <div class="conteudo-var">
+                    <p> Em JavaScript, uma variável é um contêiner para armazenar dados. Ela pode armazenar diferentes
+                        tipos de valores, como números, strings, booleanos, objetos e muito mais. As variáveis em
+                        JavaScript são declaradas usando a palavra-chave var, let ou const, seguida pelo nome da
+                        variável. Veja a diferença entre elas: </p>
+                </div>
+            </div>
 
+            <div class="carrossel">
+                <div class="container-carrossel">
+                    <input type="radio" name="slider" id="item-1" checked>
+                    <input type="radio" name="slider" id="item-2">
+                    <input type="radio" name="slider" id="item-3">
+
+                    <div class="cards">
+                        <label for="item-1" class="card-carrossel" id="const">
+                            <p class="texto-carrossel">CONST</p>
+                            <p class="text-card"> - Têm escopo de bloco e são imutáveis após a atribuição inicial.</p>
+                            <p class="text-card"> - Não podem ser reatribuídas ou redeclaradas no mesmo escopo.</p>
+                            <p class="text-card"> - São úteis para declarar valores que não devem ser alterados ao longo
+                                do tempo.</p>
+                        </label>
+
+                        <label for="item-2" class="card-carrossel" id="var">
+                            <p class="texto-carrossel">VAR</p>
+                            <p class="text-card"> - Podem ser redeclaradas e atualizadas dentro do escopo em que foram
+                                declaradas.</p>
+                            <p class="text-card"> - Não possuem escopo de bloco, o que pode levar a problemas de escopo
+                                indesejados em algumas situações.</p>
+                        </label>
+
+                        <label for="item-3" class="card-carrossel" id="let">
+                            <p class="texto-carrossel">LET</p>
+                            <p class="text-card"> - Têm escopo de bloco, o que significa que elas são limitadas ao bloco
+                                em que foram declaradas.</p>
+                            <p class="text-card"> - Podem ser redeclaradas, mas não podem ser redefinidas no mesmo
+                                escopo.</p>
+                            <p class="text-card"> - São mais seguras e podem ajudar a evitar problemas de escopo
+                                indesejados.</p>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="tipos-dados">
+            <div class="tipos-tittle">
+                <p class="tittle-tipos2">Tipos de Dados</p>
+            </div>
+
+            <div class="conteudo-tipos">
+
+                <div class="container-var-tipos">
+                    <div class="card-tipo">
+                        <span><i>String</i></span>
+                    </div>
+
+                    <p class="texto-tipos">É uma sequência de texto conhecida. Para indicar que o valor declarado é uma
+                        string, coloque-a entre aspas simples.</p>
+                </div>
+
+
+                <div class="container-var-tipos">
+                    <div class="card-tipo-num">
+                        <span><i>Number</i></span>
+                    </div>
+
+                    <p class="texto-tipos">É um número qualquer inteiro ou decimal.</p>
+                </div>
+
+                <div class="container-var-tipos">
+                    <div class="card-tipo-array">
+                        <span><i>Array</i></span>
+                    </div>
+
+                    <p class="texto-tipos">É uma estrutura que permite armazenar vários valores em um único lugar.</p>
+                </div>
+
+                <div class="container-var-tipos">
+                    <div class="card-tipo-boolean">
+                        <span><i>Boolean</i></span>
+                    </div>
+
+                    <p class="texto-tipos">Representa um valor lógico verdadeiro (true) ou falso (false)</p>
+                </div>
+
+                <div class="container-var-tipos">
+                    <div class="card-tipo-function">
+                        <span><i>Function</i></span>
+                    </div>
+
+                    <p class="texto-tipos">Representa um bloco de código reutilizável que pode ser executado quando
+                        chamado.</p>
+                </div>
+
+            </div>
+        </div>
     </section>
 
+    <!-- OPERADORES -->
+    <section class="operadores" id="operadores">
+        <div class="tittle-op">
+            <span>OPERADORES</span>
+            <hr>
+        </div>
+
+        <div class="conteudo-op">
+            <div class="op-comparacao">
+                <div class="tittle-comp">
+                    <span>Operadores de Comparação</span>
+                </div>
+
+                <div class="container-comp">
+                    <table>
+                        <tr>
+                            <th>Operador</th>
+                            <th>Operação</th>
+                            <th>Exemplo</th>
+                        </tr>
+
+                        <tr>
+                            <th>></th>
+                            <th>Maior que</th>
+                            <th>(a > b)</th>
+                        </tr>
+
+                        <tr>
+                            <th>
+                                < </th>
+                            <th>Menor que</th>
+                            <th>(a < b)</th>
+                        </tr>
+
+                        <tr>
+                            <th>>=</th>
+                            <th>Maior ou igual a</th>
+                            <th>(a >= b)</th>
+                        </tr>
+
+                        <tr>
+                            <th>
+                                <= </th>
+                            <th>Menor ou igual a</th>
+                            <th>(a <= b)</th>
+                        </tr>
+
+                        <tr>
+                            <th>==</th>
+                            <th>Igual a</th>
+                            <th>(a == b)</th>
+                        </tr>
+
+                        <tr>
+                            <th>!=</th>
+                            <th>Diferente de</th>
+                            <th>(a != b)</th>
+                        </tr>
+
+                        <tr>
+                            <th>===</th>
+                            <th>Idêntico a</th>
+                            <th>(a === b)</th>
+                        </tr>
+
+                        <tr>
+                            <th>&&</th>
+                            <th>E/and</th>
+                            <th>(a && b)</th>
+                        </tr>
+
+                        <tr>
+                            <th>||</th>
+                            <th>Ou or</th>
+                            <th>(a || b)</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="op-aritmeticos">
+                <div class="tittle-arit">
+                    <span>Operadores Aritméticos</span>
+                </div>
+
+                <div class="container-arit">
+                    <table>
+                        <tr>
+                            <th>Operador</th>
+                            <th>Operação</th>
+                            <th>Exemplo</th>
+                        </tr>
+
+                        <tr>
+                            <th> + </th>
+                            <th>Adição</th>
+                            <th>(a - b)</th>
+                        </tr>
+
+                        <tr>
+                            <th>-</th>
+                            <th>Subtração</th>
+                            <th>(a - b)</th>
+                        </tr>
+
+                        <tr>
+                            <th>*</th>
+                            <th>Multiplicação</th>
+                            <th>(a * b)</th>
+                        </tr>
+
+                        <tr>
+                            <th>/</th>
+                            <th>Divisão</th>
+                            <th>(a / b)</th>
+                        </tr>
+
+                        <tr>
+                            <th>%</th>
+                            <th>Módulo</th>
+                            <th>(a % b)</th>
+                        </tr>
+
+                        <tr>
+                            <th>++</th>
+                            <th>Incremento</th>
+                            <th>(contador ++ )</th>
+                        </tr>
+
+                        <tr>
+                            <th>--</th>
+                            <th>Decremento</th>
+                            <th>(contador -- )</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESTRUTURAS -->
+    <section class="estruturas" id="estruturas">
+        <div class="tittle-est">
+            <span>ESTRUTURAS</span>
+        </div>
+
+        <div class="conteudo-est">
+            <div class="card">
+                <div class="content">
+                    <h2>IF ELSE</h2>
+                    <p>O if é uma estrutura de controle de fluxo que executa um bloco de código se uma condição
+                        especificada for verdadeira.</p>
+                    <p> O else é opcional e permite a execução de um bloco de código diferente caso a condição do if
+                        seja falsa.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="content">
+                    <h2>FOR</h2>
+                    <p> O for é uma estrutura de controle de fluxo que é utilizada para repetir um bloco de código um
+                        número específico de vezes. </p>
+
+                    <p>Ele consiste em três partes: inicialização, condição e expressão final, separadas por ponto e
+                        vírgula.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="content">
+                    <h2>WHILE</h2>
+                    <p> O while é uma estrutura de controle de fluxo que executa um bloco de código enquanto uma
+                        condição especificada for verdadeira.</p>
+                    <p>A condição é verificada antes da execução do bloco de código.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="content">
+                    <h2>DO WHILE</h2>
+                    <p> O do-while é semelhante ao while, mas a condição é verificada após a execução do bloco de
+                        código. </p>
+
+                    <p>Isso garante que o bloco de código seja executado pelo menos uma vez, mesmo se a condição for
+                        falsa
+                        desde o início.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- EXERCÍCIOS DE FIXAÇÃO -->
+    <section class="exercicios" id="exercicios"></section>
+
     <script src="main.js"></script>
+    <script>
+        VanillaTilt.init(document.querySelectorAll(".card"), {
+            max: 25,
+            speed: 400,
+            glare: true,
+            "max-glare": 1,
+        });
+    </script>
 </body>
 
 </html>
