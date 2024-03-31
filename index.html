@@ -412,9 +412,36 @@
 
 
     <!-- EXERCÍCIOS DE FIXAÇÃO -->
-    <section class="exercicios" id="exercicios"></section>
+    <section class="exercicios" id="exercicios">
+        <div class="tittle-exer">
+            <span>Exercícios para praticar!!</span>
+            <hr>
+        </div>
+
+        <div class="conteudo-exer">
+            <p>Nessa parte iremos testar todos os seus conhecimentos adquiridos até aqui,
+                se não se sentir confiante revise alguns topícos. Estamos com você nessa. Clique para iniciar o quiz.
+            </p>
+            <button class="start-btn">Iniciar</button>
+
+            <div class="popup-info">
+                <h2>Guia</h2>
+                <span class="info">1 - sim</span>
+                <span class="info">2 - não</span>
+                <span class="info">3 - talvez</span>
+                <span class="info">4 - burro do caralho</span>
+                <span class="info">5 - se quiser sim</span>
+
+                <div class="btn-group">
+                    <button class="info-btn exit-btn">Sair</button>
+                    <a href="#" class="info-btn continue-btn">Continuar</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <script src="main.js"></script>
+    <script src="script.js"></script>
     <script>
         VanillaTilt.init(document.querySelectorAll(".card"), {
             max: 25,

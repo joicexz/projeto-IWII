@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
 /*
 CARD - ESTRUTURAS
 
