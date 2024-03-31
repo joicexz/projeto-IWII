@@ -32,6 +32,7 @@
     <a href="#" class="back" title="Voltar para o início">
         <i class="fas fa-arrow-up"></i>
     </a>
+
     <!-- INTRODUÇÃO -->
     <section class="intro" id="intro">
 
@@ -420,28 +421,27 @@
 
         <div class="conteudo-exer">
             <p>Nessa parte iremos testar todos os seus conhecimentos adquiridos até aqui,
-                se não se sentir confiante revise alguns topícos. Estamos com você nessa. Clique para iniciar o quiz.
-            </p>
-            <button class="start-btn">Iniciar</button>
+                se não se sentir confiante revise alguns topícos. Vamos nessa!!</p>
 
-            <div class="popup-info">
-                <h2>Guia</h2>
-                <span class="info">1 - sim</span>
-                <span class="info">2 - não</span>
-                <span class="info">3 - talvez</span>
-                <span class="info">4 - burro do caralho</span>
-                <span class="info">5 - se quiser sim</span>
+            <div class="app">
+                <h1>QUIZ - JavaScript</h1>
+                <div class="quiz">
+                    <h2 id="question">Questão aq</h2>
 
-                <div class="btn-group">
-                    <button class="info-btn exit-btn">Sair</button>
-                    <a href="#" class="info-btn continue-btn">Continuar</a>
+                    <div id="resposta-botao">
+                        <button class="btn">Resposta 1 </button>
+                        <button class="btn">Resposta 2 </button>
+                        <button class="btn">Resposta 3 </button>
+                        <button class="btn">Resposta 4 </button>
+                    </div>
+
+                    <button id="next-btn">Avançar</button>
                 </div>
             </div>
         </div>
     </section>
 
     <script src="main.js"></script>
-    <script src="script.js"></script>
     <script>
         VanillaTilt.init(document.querySelectorAll(".card"), {
             max: 25,

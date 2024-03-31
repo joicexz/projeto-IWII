@@ -870,9 +870,8 @@ th {
 .exercicios {
     width: 100vw;
     height: 100vh;
-    /* background-color: #11cf76; */
     grid-template-areas: "tittle-exer" "conteudo-exer";
-    grid-template-rows: 200px 1fr;
+    grid-template-rows: 150px 1fr;
     display: grid;
     position: relative;
     top: 450%;
@@ -882,7 +881,6 @@ th {
     grid-area: tittle-exer;
     width: 100%;
     height: 100%;
-    /* background-color: #F8E891; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -914,7 +912,6 @@ th {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* background-color: red; */
 }
 
 .conteudo-exer p {
@@ -923,100 +920,68 @@ th {
     font-family: Karma;
 }
 
-.conteudo-exer .start-btn {
-    width: 190px;
-    height: 55px;
-    background-color: #ebcb17;
-    border: 2px #424242 solid;
-    outline: none;
-    border-radius: 6px;
-    box-shadow: 0 0 10px #f3bc55;
+.app {
+    background: #f8ba11;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 45px;
+    font-family: Josefin Sans;
+}
+
+.app h1 {
+    font-size: 35px;
+    color: rgb(211, 117, 3);
+    border-bottom: 3px #000 solid;
+    padding-bottom: 30px;
+}
+
+.quiz {
+    padding: 20px 0;
+}
+
+.quiz h2 {
     font-size: 25px;
-    /* color: white; */
-    letter-spacing: 1px;
-    font-weight: 600;
+}
+
+.btn {
+    background-color: #f3d88d;
+    width: 100%;
+    border: 1px #f3d88d solid;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: left;
+    border-radius: 5px;
     cursor: pointer;
-    font-family: Inria Sans;
-    transition: .5s;
+    transition: all 0.3s;
 }
 
-.conteudo-exer .start-btn:hover {
-    box-shadow: none;
-    background-color: rgb(239, 228, 179);
+.btn:hover:not([disabled]) {
+    color: grey;
 }
 
-.popup-info {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(.9);
-    width: 500px;
-    background-color: rgb(225, 142, 9);
-    border-radius: 6px;
-    padding: 10px 25px;
-    opacity: 0;
-    pointer-events: none;
-    transition: .3s ease;
+.btn:disable {
+    cursor: no-drop;
 }
 
-.popup-info.active{
-    opacity: 1;
-    pointer-events: auto;
-    transform: translate(-50%, -50%) scale(1);
-}
-
-.popup-info h2 {
-    font-size: 50px;
-    color: rgb(246, 204, 126);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.popup-info .info {
-    display: inline-block;
-    font-size: 16px;
-    color: #333;
-    font-weight: 500;
-    margin: 4px 0;
-}
-
-.popup-info .btn-group {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px grey solid;
-    margin-top: 10px;
-    padding: 15px 0 7px;
-}
-
-.popup-info .btn-group .info-btn {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 130px;
-    height: 35px;
-    background-color: rgb(246, 204, 126);
-    border: 2px rgb(246, 204, 126) solid;
-    outline: none;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
-    color: black;
-    box-shadow: 0 0 10px rgb(47, 47, 47);
+#next-btn {
+    background-color: rgb(211, 117, 3);
+    color: #000;
+    width: 150px;
+    font-weight: bold;
+    border: 0;
+    padding: 10px;
+    margin: 20px auto 0;
+    border-radius: 5px;
     cursor: pointer;
-    font-family: Inria Sans;
-    transition: .5s;
+    display: none;
 }
 
-.popup-info .btn-group .info-btn:nth-child(1):hover {
-    background: orange;
-    border-color: rgb(246, 204, 126);
+.correct {
+    background: #9aeabc;
 }
 
-.popup-info .btn-group .info-btn:nth-child(2):hover {
-    background: orange;
-    border-color: rgb(246, 204, 126);
+.incorrect {
+    background: #ff9393;
 }
-

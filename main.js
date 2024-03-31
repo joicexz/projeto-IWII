@@ -1,3 +1,6 @@
+
+/* ROLAR SUAVEMENTE ATÉ DETERMINADA SEÇÃO */
+
 document.addEventListener("DOMContentLoaded", function () {
 
     // Função para rolar suavemente até uma seção 
@@ -27,6 +30,153 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+
+/*JS - QUIZ */
+
+const questions = [
+    {
+        question: " A estrutura de repetição que executa um bloco de código pelo menos uma vez e continua a executá-lo enquanto uma condição especificada for verdadeira é o: ",
+        respostas:
+            [
+                { text: "If Else", correct: false },
+                { text: "While", correct: false },
+                { text: "Do While", correct: true },
+                { text: "For", correct: false },
+
+            ]
+    },
+    {
+        question: "Qual operador é utilizado para realizar uma comparação entre dois valores e retornar verdadeiro se os valores forem iguais, e falso caso contrário?",
+        respostas:
+            [
+                { text: "==", correct: true },
+                { text: "<=", correct: false },
+                { text: "===", correct: false },
+                { text: "<>", correct: false },
+
+            ]
+    },
+    {
+        question: "Qual a forma correta de se declarar uma variável do tipo string.",
+        respostas:
+            [
+                { text: "var nome;", correct: false },
+                { text: "var == 'nome'", correct: false },
+                { text: "var _Nome", correct: false },
+                { text: "var = 'nome' ", correct: true },
+
+            ]
+    },
+    {
+        question: "Qual estrutura de repetição é usada para executar um bloco de código para cada item em uma lista, como um array?",
+        respostas:
+            [
+                { text: "If Else", correct: false },
+                { text: "While", correct: false },
+                { text: "For", correct: true },
+                { text: "Else", correct: false },
+
+            ]
+    },
+    {
+        question: "Qual é o operador utilizado para realizar uma comparação entre dois valores e retornar verdadeiro se os valores forem iguais e do mesmo tipo de dados?",
+        respostas:
+            [
+                { text: "!=", correct: false },
+                { text: "===", correct: true },
+                { text: "&&", correct: false },
+                { text: "||", correct: false },
+
+            ]
+    }
+];
+
+const questionElement = document.getElementById("question");
+const resp = document.getElementById("resposta-botao");
+const next = document.getElementById("next-btn");
+
+
+let currentQuestionIndex = 0;
+let score = 0;
+
+function startQuiz() {
+    currentQuestionIndex = 0;
+    score = 0;
+    next.innerHTML = "Avançar";
+    showQuestion();
+}
+
+function showQuestion() {
+    resetState();
+    let currentQuestion = questions[currentQuestionIndex];
+    let questionNo = currentQuestionIndex + 1;
+    questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
+
+    currentQuestion.respostas.forEach(resposta => {
+        const button = document.createElement("button");
+        button.innerHTML = resposta.text;
+        button.classList.add("btn");
+        resp.appendChild(button);
+        if (resposta.correct) {
+            button.dataset.correct = resposta.correct;
+        }
+        button.addEventListener("click", selectAnswer);
+    });
+}
+
+
+function resetState() {
+    next.style.display = "none";
+    while (resp.firstChild) {
+        resp.removeChild(resp.firstChild);
+    }
+}
+
+function selectAnswer(e) {
+    const selectedBtn = e.target;
+    const isCorrect = selectedBtn.dataset.correct === "true";
+
+    if (isCorrect) {
+        selectedBtn.classList.add("correct");
+        score++;
+    } else {
+        selectedBtn.classList.add("incorrect");
+    }
+    Array.from(resp.children).forEach(button => {
+        if (button.dataset.correct === "true") {
+            button.classList.add("correct");
+        }
+        button.disabled = true;
+    })
+    next.style.display = "block"
+}
+
+function showScore() {
+    resetState();
+    questionElement.innerHTML = `Você acertou ${score} de ${questions.length} perguntas!`;
+
+    next.innerHTML = "Reiniciar";
+    next.style.display = "block";
+}
+
+function handleNextButton() {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+        showQuestion();
+    } else {
+        showScore();
+    }
+}
+
+next.addEventListener("click", () => {
+    if (currentQuestionIndex < questions.length) {
+        handleNextButton();
+    } else {
+        startQuiz();
+    }
+})
+
+startQuiz();
 
 
 /*
@@ -533,4 +683,3 @@ var VanillaTilt = (function () {
     return VanillaTilt;
 
 }());
-
