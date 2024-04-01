@@ -61,9 +61,9 @@ const questions = [
         respostas:
             [
                 { text: "var nome;", correct: false },
-                { text: "var == 'nome'", correct: false },
-                { text: "var _Nome", correct: false },
-                { text: "var = 'nome' ", correct: true },
+                { text: "var == 'nome';", correct: false },
+                { text: "var = 'nome';", correct: false },
+                { text: " var nome =  'joice';", correct: true },
 
             ]
     },
